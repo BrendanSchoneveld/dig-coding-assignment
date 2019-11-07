@@ -5,14 +5,16 @@ import "./AppMainStyling.scss";
 
 import routes from "../../../routing/routes";
 
-const AppMain = () => {
+const AppMain = ({ productList, isLoading }) => {
   // Render routes into AppMain component
   const setRoutes = routes.map(({ path, Component, id }) => (
     <Route
       exact
       key={id}
       path={path}
-      render={props => <Component {...props} />}
+      render={props => (
+        <Component {...props} productList={productList} isLoading={isLoading} />
+      )}
     />
   ));
 

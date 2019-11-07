@@ -1,0 +1,43 @@
+@import "../abstracts/variables", "../abstracts/functions";
+@import url("https://fonts.googleapis.com/css?family=Beth+Ellen|Lato:400,700|Roboto:400,500&display=swap");
+
+@import "./fonts";
+
+ul,
+p {
+  font-size: v(fontsize--body);
+}
+
+h1 {
+  font-size: v(fontsize--h1);
+}
+
+h2 {
+  font-size: v(fontsize--h2);
+}
+
+h3 {
+  font-size: v(fontsize--h3);
+}
+
+h4 {
+  font-size: v(fontsize--h4);
+}
+
+h5 {
+  font-size: v(fontsize--h5);
+}
+
+h6 {
+  font-size: v(fontsize--h6);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}

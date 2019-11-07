@@ -1,0 +1,208 @@
+@import "../base/fonts";
+/******************************
+Colors
+******************************/
+// brand colors
+
+/******************************
+Fonts
+******************************/
+
+/******************************
+Breakpoints
+******************************/
+
+// Breakpoints
+$breakpoint--phone: 400px;
+$breakpoint--phone-wide: 480px;
+$breakpoint--phablet: 560px;
+$breakpoint--tablet-small: 640px;
+$breakpoint--tablet: 768px;
+$breakpoint--tablet-wide: 1024px;
+$breakpoint--desktop: 1248px;
+$breakpoint--desktop-wide: 1440px;
+
+$fontSizes: (8, 10, 12, 14, 16, 20, 24, 28, 32, 40, 48, 56, 64, 72, 80);
+$spacings: (
+  0,
+  5,
+  10,
+  15,
+  20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  75,
+  100,
+  150,
+  170,
+  200,
+  250,
+  300
+);
+$spacingUnits: (
+  1: 0,
+  2: 5,
+  3: 10,
+  4: 15,
+  5: 20,
+  6: 25,
+  7: 30,
+  8: 35,
+  9: 40,
+  10: 45,
+  11: 50,
+  12: 75,
+  13: 100
+);
+$sides: (top, bottom, left, right, horizontal, vertical, all);
+$colors: (
+  #{$brand-color--white},
+  #{$brand-color--black},
+  #{$brand-color--orange},
+  #{$brand-color--purple},
+  #{$brand-color--red}
+);
+
+$colors: (
+  white: #{$brand-color--white},
+  black: #{$brand-color--black},
+  orange: #{$brand-color--orange},
+  purple: #{$brand-color--purple},
+  red: #{$brand-color--red}
+);
+
+$breakpoints: (
+  xs: 200,
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200
+);
+
+$spacing-configs: (
+  spacingUnits: (
+    1: 0,
+    2: 5,
+    3: 10,
+    4: 15,
+    5: 20,
+    6: 25,
+    7: 30,
+    8: 35,
+    9: 40,
+    10: 45,
+    11: 50,
+    12: 75,
+    13: 100
+  ),
+  breakpoints: (
+    xs: (
+      min-width: 200
+    ),
+    xs-only: (
+      min-width: 200,
+      max-width: 575
+    ),
+    sm: (
+      min-width: 576
+    ),
+    sm-only: (
+      min-width: 576,
+      max-width: 767
+    ),
+    md: (
+      min-width: 768
+    ),
+    md-only: (
+      min-width: 768,
+      max-width: 991
+    ),
+    lg: (
+      min-width: 992
+    ),
+    lg-only: (
+      min-width: 992,
+      max-width: 1139
+    ),
+    xl: (
+      min-width: 1140
+    )
+  )
+);
+
+//$fontsizes: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$fontsizes: (
+  $fontsize--h1,
+  $fontsize--h2,
+  $fontsize--h3,
+  $fontsize--h4,
+  $fontsize--h5,
+  $fontsize--h6,
+  $fontsize--small
+);
+
+:root {
+  // Colors
+  --color--white: #ffffff;
+  --color--black: #000000;
+  --color--orange: #fcaf17;
+  --color--purple: #3b0256;
+  --color--red: #f04e23;
+
+  --color--lightgrey: #f7f7f7;
+  --color--mediumgrey: #c3c3c3;
+  --color--darkgrey: #999999;
+  --color--error: #d33737;
+
+  // Fonts
+  --ff--roboto: "Roboto", sans-serif;
+  --ff--lato: "Lato", sans-serif;
+  --ff--beth: "Beth", cursive;
+
+  // Fontsizes
+  --fontsize--browser-base: 10px;
+
+  --font-weight--bold: bold;
+  --fs--body: 1.6rem;
+  --fs--small: 1.4rem;
+
+  --fs--h1: 7rem;
+  --fs--h2: 4.5rem;
+  --fs--h3: 3.2rem;
+  --fs--h4: 2.4rem;
+  --fs--h5: 2rem;
+  --fs--h6: 1.6rem;
+
+  // Breakpoints
+  --breakpoint--phone: #{$breakpoint--phone};
+  --breakpoint--phone-wide: #{$breakpoint--phone-wide};
+  --breakpoint--phablet: #{$breakpoint--phablet};
+  --breakpoint--tablet-small: #{$breakpoint--tablet-small};
+  --breakpoint--tablet: #{$breakpoint--tablet};
+  --breakpoint--tablet-wide: #{$breakpoint--tablet-wide};
+  --breakpoint--desktop: #{$breakpoint--desktop};
+  --breakpoint--desktop-wide: #{$breakpoint--desktop-wide};
+}
+
+$devicename: (
+  "phone": --breakpoint--phone,
+  "phone-wide": --breakpoint--phone-wide,
+  "phablet": --breakpoint--phablet,
+  "tablet-small": --breakpoint--tablet-small,
+  "tablet": --breakpoint--tablet,
+  "tablet-wide": --breakpoint--tablet-wide,
+  "desktop": --breakpoint--desktop,
+  "desktop-wide": --breakpoint--desktop-wide
+);
+
+$z-indexes: (
+  "outdated-browser",
+  "modal",
+  "site-header",
+  "page-wrapper",
+  "site-footer"
+);
