@@ -1,0 +1,18 @@
+.slick-prev,
+.slick-next {
+  font-size: 4rem;
+  height: 4rem;
+  width: 4rem;
+  &:before,
+  &:after {
+    font-size: 4rem;
+  }
+}
+
+.slick-next {
+  right: -45px;
+}
+
+.slick-prev {
+  left: -45px;
+}

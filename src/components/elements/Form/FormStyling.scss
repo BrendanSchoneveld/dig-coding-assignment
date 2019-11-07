@@ -1,0 +1,15 @@
+@import "../../../styling/abstracts/functions";
+
+.review-form {
+  * {
+    font-size: 1.6rem;
+  }
+
+  input.form-control {
+    height: 4rem;
+  }
+
+  .form-control {
+    font-size: 1.6rem !important;
+  }
+}
