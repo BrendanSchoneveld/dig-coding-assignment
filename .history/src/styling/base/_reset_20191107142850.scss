@@ -1,0 +1,15 @@
+@import "../abstracts/variables";
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+body,
+html {
+  font-size: var(--fontsize--browser-base);
+}
+
+p {
+  margin: 0;
+}

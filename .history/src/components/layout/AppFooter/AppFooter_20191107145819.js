@@ -1,10 +1,10 @@
 import React from "react";
-import AppFooterMessage from "./AppFooterMessage";
+import Paragraph from "../../atoms/Typography/Paragraph";
 
 const AppFooter = ({ author }) => {
   return (
     <footer className="app-footer bg-black min-h-50 flex flex--center">
-      <AppFooterMessage author={author} />
+      <Paragraph customClasses="fs-14 fc-white" text="" />
     </footer>
   );
 };

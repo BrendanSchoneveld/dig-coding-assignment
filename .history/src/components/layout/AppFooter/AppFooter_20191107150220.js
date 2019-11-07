@@ -1,4 +1,5 @@
 import React from "react";
+import Paragraph from "../../atoms/Typography/Paragraph";
 import AppFooterMessage from "./AppFooterMessage";
 
 const AppFooter = ({ author }) => {

@@ -1,0 +1,25 @@
+@import "../../../styling/abstracts/functions";
+.btn {
+  position: relative;
+  display: inline-block;
+
+  &--right {
+    float: right;
+  }
+
+  &--default {
+    opacity: 0.8;
+    background: v(color--red);
+    color: v(color--white);
+    text-decoration: none;
+    transition: all 400ms;
+
+    &:hover,
+    &:focus {
+      color: v(color--white) !important;
+      background: v(color--purple) !important;
+      opacity: 1;
+      transition: all 400ms;
+    }
+  }
+}

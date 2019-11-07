@@ -8,8 +8,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-size: v(fs--browser-base);
-  background-color: v(color--orange);
+  font-size: v(font-size--browser-base);
+  background-color: v(brand-color--orange);
 }
 
 code {

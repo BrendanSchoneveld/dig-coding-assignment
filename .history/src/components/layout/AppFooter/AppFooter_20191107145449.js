@@ -1,10 +1,11 @@
 import React from "react";
-import AppFooterMessage from "./AppFooterMessage";
 
 const AppFooter = ({ author }) => {
   return (
     <footer className="app-footer bg-black min-h-50 flex flex--center">
-      <AppFooterMessage author={author} />
+      <p className="fs-14 fc-white">
+        Made with <i className="fas fa-heart fc-red" /> by {author}
+      </p>
     </footer>
   );
 };

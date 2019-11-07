@@ -3,16 +3,16 @@
 Colors
 ******************************/
 // brand colors
-$color--white: #ffffff;
-$color--black: #000000;
-$color--orange: #fcaf17;
-$color--purple: #3b0256;
-$color--red: #f04e23;
+$brand-color--white: #ffffff;
+$brand-color--black: #000000;
+$brand-color--orange: #fcaf17;
+$brand-color--purple: #3b0256;
+$brand-color--red: #f04e23;
 
 // custom colors
-$color--lightgrey: #f7f7f7;
-$color--mediumgrey: #c3c3c3;
-$color--darkgrey: #999999;
+$brand-color--lightgrey: #f7f7f7;
+$brand-color--mediumgrey: #c3c3c3;
+$brand-color--darkgrey: #999999;
 
 // utility colors
 $error-color: #d33737;
@@ -20,22 +20,22 @@ $error-color: #d33737;
 /******************************
 Fonts
 ******************************/
-$ff--roboto: "Roboto", sans-serif;
-$ff--lato: "Lato", sans-serif;
-$ff--beth: "Beth", cursive;
+$font-family--roboto: "Roboto", sans-serif;
+$font-family--lato: "Lato", sans-serif;
+$font-family--beth: "Beth", cursive;
 
 // base fontsize
-$fs--browser-base: 10px;
+$fontsize--browser-base: 10px;
 
 //
-$fs--body: 1.6rem;
-$fs--small: 1.4rem;
-$fs--h1: 7rem;
-$fs--h2: 4.5rem;
-$fs--h3: 3.2rem;
-$fs--h4: 2.4rem;
-$fs--h5: 2rem;
-$fs--h6: 1.6rem;
+$fontsize--body: 1.6rem;
+$fontsize--small: 1.4rem;
+$fontsize--h1: 7rem;
+$fontsize--h2: 4.5rem;
+$fontsize--h3: 3.2rem;
+$fontsize--h4: 2.4rem;
+$fontsize--h5: 2rem;
+$fontsize--h6: 1.6rem;
 
 $font-weight--bold: bold;
 
@@ -91,19 +91,19 @@ $spacingUnits: (
 );
 $sides: (top, bottom, left, right, horizontal, vertical, all);
 $colors: (
-  #{$color--white},
-  #{$color--black},
-  #{$color--orange},
-  #{$color--purple},
-  #{$color--red}
+  #{$brand-color--white},
+  #{$brand-color--black},
+  #{$brand-color--orange},
+  #{$brand-color--purple},
+  #{$brand-color--red}
 );
 
 $colors: (
-  white: #{$color--white},
-  black: #{$color--black},
-  orange: #{$color--orange},
-  purple: #{$color--purple},
-  red: #{$color--red}
+  white: #{$brand-color--white},
+  black: #{$brand-color--black},
+  orange: #{$brand-color--orange},
+  purple: #{$brand-color--purple},
+  red: #{$brand-color--red}
 );
 
 $breakpoints: (
@@ -166,37 +166,45 @@ $spacing-configs: (
 );
 
 //$fontsizes: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
-$fontsizes: ($fs--h1, $fs--h2, $fs--h3, $fs--h4, $fs--h5, $fs--h6, $fs--small);
+$fontsizes: (
+  $fontsize--h1,
+  $fontsize--h2,
+  $fontsize--h3,
+  $fontsize--h4,
+  $fontsize--h5,
+  $fontsize--h6,
+  $fontsize--small
+);
 
 :root {
   // Colors
-  --color--white: #{$color--white};
-  --color--black: #{$color--black};
-  --color--orange: #{$color--orange};
-  --color--purple: #{$color--purple};
-  --color--red: #{$color--red};
-  --color--lightgrey: #{$color--lightgrey};
-  --color--mediumgrey: #{$color--mediumgrey};
-  --color--darkgrey: #{$color--darkgrey};
+  --brand-color--white: #{$brand-color--white};
+  --brand-color--black: #{$brand-color--black};
+  --brand-color--orange: #{$brand-color--orange};
+  --brand-color--purple: #{$brand-color--purple};
+  --brand-color--red: #{$brand-color--red};
+  --brand-color--lightgrey: #{$brand-color--lightgrey};
+  --brand-color--mediumgrey: #{$brand-color--mediumgrey};
+  --brand-color--darkgrey: #{$brand-color--darkgrey};
   --error-color: #{$error-color};
 
   // Fonts
 
-  --ff--roboto: $ff--roboto;
-  --ff--lato: $ff--lato;
-  --ff--beth: $ff--beth;
-  --fs--browser-base: #{$fs--browser-base};
+  --font-family--roboto: $font-family--roboto;
+  --font-family--lato: $font-family--lato;
+  --font-family--beth: $font-family--beth;
+  --fontsize--browser-base: #{$fontsize--browser-base};
 
   --font-weight--bold: #{$font-weight--bold};
-  --fs--body: #{$fs--body};
-  --fs--small: #{$fs--small};
+  --fontsize--body: #{$fontsize--body};
+  --fontsize--small: #{$fontsize--small};
 
-  --fs--h1: #{$fs--h1};
-  --fs--h2: #{$fs--h2};
-  --fs--h3: #{$fs--h3};
-  --fs--h4: #{$fs--h4};
-  --fs--h5: #{$fs--h5};
-  --fs--h6: #{$fs--h6};
+  --fontsize--h1: #{$fontsize--h1};
+  --fontsize--h2: #{$fontsize--h2};
+  --fontsize--h3: #{$fontsize--h3};
+  --fontsize--h4: #{$fontsize--h4};
+  --fontsize--h5: #{$fontsize--h5};
+  --fontsize--h6: #{$fontsize--h6};
 
   // Breakpoints
   --breakpoint--phone: #{$breakpoint--phone};
