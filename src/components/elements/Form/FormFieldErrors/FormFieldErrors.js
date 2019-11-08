@@ -1,9 +1,9 @@
 import React from "react";
 
-const FormFieldErrors = ({ errors, name }) => {
-  //const errorType = errors[name];
+import _ from "lodash";
 
-  //console.log(errorType.type);
+const FormFieldErrors = ({ errors, name }) => {
+  let hasErrors = _.isEmpty(errors);
 
   return <div>{errors[name] && `This field is required`}</div>;
 };

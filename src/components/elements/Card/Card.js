@@ -20,7 +20,7 @@ const Card = ({ images, title, match, price, id }) => {
             price={price}
             match={match}
             id={id}
-            customClasses="card__image-wrapper col-12 col-sm-8 col-lg-7"
+            customClasses="card__image-wrapper col-12 col-sm-7"
           />
         </div>
       </div>

@@ -29,16 +29,21 @@ const ProductDetailView = props => {
     setProduct(fetchCurrentProduct);
   }, [productList, currentProductID]);
 
+  // Retrieve localStorage reviews
   useEffect(() => {
+    // Logic to retrieve the reviews only for the current product
     const fetchReviewsOfCurrentProduct = (reviews, review, productID) => {
       if (productID === currentProductID) {
         reviews.push(review);
       }
     };
 
+    // Fetch all reviews from localStorage
     const fetchReviews = () => {
       let reviews = [];
+
       for (let i = 0; i < localStorage.length; i++) {
+        // Parse every review from a string to an object
         const parsedReview = JSON.parse(
           localStorage.getItem(localStorage.key(i))
         );
@@ -49,6 +54,8 @@ const ProductDetailView = props => {
           parsedReview.productID
         );
       }
+
+      // set fetched reviews in setReviews state hook
       setReviews(reviews);
     };
 
