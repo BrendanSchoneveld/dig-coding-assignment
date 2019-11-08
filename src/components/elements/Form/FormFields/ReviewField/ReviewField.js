@@ -1,27 +1,22 @@
 import React from "react";
 import Label from "../../../../atoms/FormAtoms/Label";
 import Textarea from "../../../../atoms/FormAtoms/Textarea";
+import FormFieldErrors from "../../FormFieldErrors/FormFieldErrors";
 
 const ReviewField = ({
   groupClasses,
   inputProps,
   labelProps,
-  setReview,
   register,
-  errors,
-  value
+  errors
 }) => {
   return (
     <div className={groupClasses}>
       <Label labelProps={labelProps} />
 
-      <Textarea
-        inputProps={inputProps}
-        setValue={setReview}
-        value={value}
-        register={register}
-        errors={errors}
-      />
+      <Textarea inputProps={inputProps} register={register} errors={errors} />
+
+      <FormFieldErrors errors={errors} name={inputProps.name} />
     </div>
   );
 };

@@ -12,9 +12,13 @@ import useInput from "./CustomHooks/useInputHook";
 import FirstNameField from "./FormFields/FirstNameField/FirstNameInput";
 import LastNameField from "./FormFields/LastNameField/LastNameInput";
 import ReviewField from "./FormFields/ReviewField/ReviewField";
+import { watch } from "fs";
 
 const Form = ({ productID }) => {
-  const { register, handleSubmit, errors } = useForm();
+  const [firstname, setFirstname] = useInput(""),
+    [lastname, setLastname] = useInput(""),
+    [review, setReview] = useInput(""),
+    { register, handleSubmit, watch, errors } = useForm();
 
   const onSubmit = data => {
     const dateOfPost = moment()
@@ -37,15 +41,28 @@ const Form = ({ productID }) => {
     setReviewToLocalstorage(localStorageKey, productReview);
   };
 
-  const [firstname, setFirstname] = useInput(""),
-    [lastname, setLastname] = useInput(""),
-    [review, setReview] = useInput("");
-
   const { firstNameProps, lastNameProps, reviewProps } = formFieldModels;
+
+  useEffect(() => {
+    console.log(watch("firstName"));
+  });
 
   return (
     <form className="review-form fs-18" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-row">
+        {watch("firstName")}
+        {/* <label htmlFor="firstName">First name</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          ref={register({
+            required: true,
+            maxLength: 20,
+            pattern: /^[A-Za-z]+$/i
+          })}
+        /> */}
+
         <FirstNameField
           {...firstNameProps}
           errors={errors}

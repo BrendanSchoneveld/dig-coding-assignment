@@ -2,10 +2,7 @@ import React, { Fragment } from "react";
 
 const Input = ({
   inputProps: { customClasses, id, type, name, placeholder },
-  setValue,
-  value,
-  register,
-  errors
+  register
 }) => {
   return (
     <Fragment>
@@ -15,7 +12,7 @@ const Input = ({
         name={name}
         className={customClasses}
         placeholder={placeholder}
-        ref={register({ required: true })}
+        ref={register}
       />
     </Fragment>
   );
