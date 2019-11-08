@@ -7,62 +7,49 @@ import "./FormStyling.scss";
 
 import formFieldModels from "./FormFieldModels/FormFieldModels";
 
-// Inserting a custom Hook for user input handling
-import useInput from "./CustomHooks/useInputHook";
 import FirstNameField from "./FormFields/FirstNameField/FirstNameInput";
 import LastNameField from "./FormFields/LastNameField/LastNameInput";
 import ReviewField from "./FormFields/ReviewField/ReviewField";
-import { watch } from "fs";
 
 const Form = ({ productID }) => {
-  const [firstname, setFirstname] = useInput(""),
-    [lastname, setLastname] = useInput(""),
-    [review, setReview] = useInput(""),
-    { register, handleSubmit, watch, errors } = useForm();
+  // Fetch methods from useForm hook
+  const { register, handleSubmit, errors } = useForm();
 
-  const onSubmit = data => {
-    const dateOfPost = moment()
-      .locale("nl")
-      .format("D MMMM YYYY");
-
-    const productReview = {
-        productID,
-        dateOfPost,
-        firstname,
-        lastname,
-        review
-      },
-      localStorageKey = `reviewOf${firstname}${lastname}`;
-
-    const setReviewToLocalstorage = (key, data) => {
-      localStorage.setItem(key, JSON.stringify(data));
-    };
-
-    setReviewToLocalstorage(localStorageKey, productReview);
-  };
-
+  // Destructure formfields from formFieldModels
   const { firstNameProps, lastNameProps, reviewProps } = formFieldModels;
 
-  useEffect(() => {
-    console.log(watch("firstName"));
-  });
+  const additionalReviewProps = {
+    // Datestamp for review
+    dateOfPost: moment()
+      .locale("nl")
+      .format("D MMMM YYYY"),
+    // ID of specific product
+    productID
+  };
+
+  // Onsubmit handler which gets data from form, and adds two
+  const onSubmit = formData => {
+    const addAdditionalPropsTo = (formData, addReviewProps) => {
+      for (const [key, value] of Object.entries(addReviewProps)) {
+        formData[key] = value;
+      }
+      return formData;
+    };
+
+    const setReviewToLocalstorage = reviewData => {
+      const { firstName, lastName } = reviewData;
+      const localStorageKey = `reviewOf${firstName}${lastName}`;
+      localStorage.setItem(localStorageKey, JSON.stringify(reviewData));
+    };
+
+    const productReview = addAdditionalPropsTo(formData, additionalReviewProps);
+
+    setReviewToLocalstorage(productReview);
+  };
 
   return (
     <form className="review-form fs-18" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-row">
-        {watch("firstName")}
-        {/* <label htmlFor="firstName">First name</label>
-        <input
-          type="text"
-          id="firstName"
-          name="firstName"
-          ref={register({
-            required: true,
-            maxLength: 20,
-            pattern: /^[A-Za-z]+$/i
-          })}
-        /> */}
-
         <FirstNameField
           {...firstNameProps}
           errors={errors}
