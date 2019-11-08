@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Textarea from "../../atoms/FormAtoms/Textarea";
+import React from "react";
 import moment from "moment";
 import "moment/locale/nl";
 
@@ -7,8 +6,6 @@ import "./FormStyling.scss";
 
 // Inserting a custom Hook for user input handling
 import useInput from "./CustomHooks/useInputHook";
-import FormGroup from "./FormRow/FormGroup/FormGroup";
-import FormRow from "./FormRow/FormRow";
 import FirstNameField from "./FormFields/FirstNameField/FirstNameInput";
 import LastNameField from "./FormFields/LastNameField/LastNameInput";
 import ReviewField from "./FormFields/ReviewField/ReviewField";

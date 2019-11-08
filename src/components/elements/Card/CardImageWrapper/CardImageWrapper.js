@@ -6,7 +6,7 @@ const CardImageWrapper = ({ altText, images }) => {
   return (
     <div className="card__image-wrapper flex flex--center-v col-12 col-sm-3">
       <DefaultImage
-        classes="img-responsive"
+        customClasses="img-responsive"
         altText={altText}
         imgSrc={imgSrc}
       />
