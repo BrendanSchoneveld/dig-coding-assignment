@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import useForm from "react-hook-form";
 import moment from "moment";
 import "moment/locale/nl";
 
@@ -13,18 +14,12 @@ import LastNameField from "./FormFields/LastNameField/LastNameInput";
 import ReviewField from "./FormFields/ReviewField/ReviewField";
 
 const Form = ({ productID }) => {
-  const [firstname, setFirstname] = useInput(""),
-    [lastname, setLastname] = useInput(""),
-    [review, setReview] = useInput("");
+  const { register, handleSubmit, errors } = useForm();
 
-  const { firstNameProps, lastNameProps, reviewProps } = formFieldModels;
-
-  const dateOfPost = moment()
-    .locale("nl")
-    .format("D MMMM YYYY");
-
-  const handleSubmit = e => {
-    e.preventDefault();
+  const onSubmit = data => {
+    const dateOfPost = moment()
+      .locale("nl")
+      .format("D MMMM YYYY");
 
     const productReview = {
         productID,
@@ -42,24 +37,42 @@ const Form = ({ productID }) => {
     setReviewToLocalstorage(localStorageKey, productReview);
   };
 
+  const [firstname, setFirstname] = useInput(""),
+    [lastname, setLastname] = useInput(""),
+    [review, setReview] = useInput("");
+
+  const { firstNameProps, lastNameProps, reviewProps } = formFieldModels;
+
   return (
-    <form className="review-form fs-18" onSubmit={handleSubmit}>
+    <form className="review-form fs-18" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-row">
         <FirstNameField
           {...firstNameProps}
-          setFirstname={setFirstname}
-          value={firstname}
+          errors={errors}
+          register={register({
+            required: true,
+            maxLength: 20,
+            pattern: /^[A-Za-z]+$/i
+          })}
         />
 
         <LastNameField
           {...lastNameProps}
-          setLastname={setLastname}
-          value={lastname}
+          errors={errors}
+          register={register({
+            required: true,
+            maxLength: 40,
+            pattern: /^[A-Za-z]+$/i
+          })}
         />
       </div>
 
       <div className="form-row">
-        <ReviewField {...reviewProps} setReview={setReview} value={review} />
+        <ReviewField
+          {...reviewProps}
+          errors={errors}
+          register={register({ required: true, maxLength: 250 })}
+        />
       </div>
 
       <div className="form-row">

@@ -1,16 +1,23 @@
-import React from "react";
+import React, { Fragment } from "react";
 
-const Input = ({ inputProps, setValue, value }) => {
-  const { customClasses, id, type, placeholder } = inputProps;
+const Input = ({
+  inputProps: { customClasses, id, type, name, placeholder },
+  setValue,
+  value,
+  register,
+  errors
+}) => {
   return (
-    <input
-      type={type}
-      id={id}
-      onChange={setValue}
-      className={customClasses}
-      placeholder={placeholder}
-      value={value}
-    />
+    <Fragment>
+      <input
+        type={type}
+        id={id}
+        name={name}
+        className={customClasses}
+        placeholder={placeholder}
+        ref={register({ required: true })}
+      />
+    </Fragment>
   );
 };
 

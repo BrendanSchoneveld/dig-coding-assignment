@@ -1,16 +1,21 @@
 import React from "react";
 
-const Textarea = ({ inputProps, setValue, value }) => {
-  const { customClasses, id, inputType, placeholder, numRows } = inputProps;
+const Textarea = ({
+  inputProps: { customClasses, id, inputType, name, placeholder, numRows },
+  setValue,
+  value,
+  register,
+  errors
+}) => {
   return (
     <textarea
       rows={numRows}
       id={id}
       type={inputType}
-      onChange={setValue}
-      value={value}
+      name={name}
       className={customClasses}
       placeholder={placeholder}
+      ref={register}
     ></textarea>
   );
 };

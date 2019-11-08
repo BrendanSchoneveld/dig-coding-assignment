@@ -8,13 +8,21 @@ const LastNameField = ({
   inputProps,
   labelProps,
   setLastname,
+  errors,
+  register,
   value
 }) => {
   return (
     <div className={groupClasses}>
       <Label labelProps={labelProps} />
 
-      <Input inputProps={inputProps} setValue={setLastname} value={value} />
+      <Input
+        inputProps={inputProps}
+        setValue={setLastname}
+        value={value}
+        register={register}
+        errors={errors}
+      />
     </div>
   );
 };

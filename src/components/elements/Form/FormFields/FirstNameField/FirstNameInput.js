@@ -7,6 +7,8 @@ const FirstNameField = ({
   groupClasses,
   inputProps,
   labelProps,
+  register,
+  errors,
   setFirstname,
   value
 }) => {
@@ -14,7 +16,13 @@ const FirstNameField = ({
     <div className={groupClasses}>
       <Label labelProps={labelProps} />
 
-      <Input inputProps={inputProps} setValue={setFirstname} value={value} />
+      <Input
+        inputProps={inputProps}
+        setValue={setFirstname}
+        value={value}
+        register={register}
+        error={errors}
+      />
     </div>
   );
 };

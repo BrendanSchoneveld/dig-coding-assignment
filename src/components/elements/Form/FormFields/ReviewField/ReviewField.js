@@ -7,13 +7,21 @@ const ReviewField = ({
   inputProps,
   labelProps,
   setReview,
+  register,
+  errors,
   value
 }) => {
   return (
     <div className={groupClasses}>
       <Label labelProps={labelProps} />
 
-      <Textarea inputProps={inputProps} setValue={setReview} value={value} />
+      <Textarea
+        inputProps={inputProps}
+        setValue={setReview}
+        value={value}
+        register={register}
+        errors={errors}
+      />
     </div>
   );
 };

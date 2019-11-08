@@ -5,6 +5,7 @@ const formFieldModels = {
       inputTag: "input",
       id: "firstName",
       type: "text",
+      name: "firstName",
       customClasses: "form-control",
       placeholder: "Firstname here..."
     },
@@ -20,6 +21,7 @@ const formFieldModels = {
       inputTag: "input",
       id: "review",
       type: "text",
+      name: "lastName",
       customClasses: "form-control",
       placeholder: "Lastname here..."
     },
@@ -35,7 +37,8 @@ const formFieldModels = {
       inputTag: "textarea",
       id: "review",
       type: "text",
-      numRows: 5,
+      name: "review",
+      numRows: 8,
       customClasses: "form-control",
       placeholder: "Type your review here..."
     },
