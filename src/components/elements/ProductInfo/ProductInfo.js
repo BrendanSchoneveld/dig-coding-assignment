@@ -9,9 +9,13 @@ const ProductInfo = ({ product }) => {
     <Fragment>
       <PageTitle text={title} customClasses="fs-40 mb-10 fc-purple" />
 
-      <Strong text={price} currencyPrefix="€" customClasses="fs-28" />
+      <Strong
+        text={price}
+        currencyPrefix="€"
+        customClasses="fs-28 block w--100 txt--r mb-20"
+      />
 
-      <Paragraph text={description} customClasses="mt-40" />
+      <Paragraph text={description} customClasses="block" />
     </Fragment>
   );
 };

@@ -6,7 +6,7 @@ import LoadingSpinner from "../../elements/LoadingSpinner/LoadingSpinner";
 import Form from "../../elements/Form/Form";
 import ProductReviews from "../../elements/Reviews/Reviews";
 import ParagraphHeader from "../../atoms/Typography/Headers/ParagraphHeader";
-import BackButton from "../../atoms/Buttons/BackLink";
+import BackLink from "../../atoms/Buttons/BackLink";
 
 const ProductDetailView = props => {
   const [product, setProduct] = useState({}),
@@ -96,7 +96,7 @@ const ProductDetailView = props => {
     <div className="container">
       <div className="row">
         <div className="col">
-          <BackButton
+          <BackLink
             linkClasses="fas fa-arrow-left mr-10"
             customClasses="fs-16 fc-purple lnk lnk--no-hover"
             path="/"
@@ -109,18 +109,14 @@ const ProductDetailView = props => {
 
       <div className="row mt-40">
         <div className="col-12 col-md-6 mv-20">
-          <ParagraphHeader customClasses="fc-purple mb-20" text={formTitle} />
-          <Form productID={currentProductID} />
+          <Form productID={currentProductID} formTitle={formTitle} />
         </div>
 
         <div className="col-12 col-md-5 offset-md-1 mv-20">
-          <ParagraphHeader
-            text={reviewsTitle}
-            customClasses="fc-purple mb-20"
-          />
           <ProductReviews
             reviews={reviews}
             currentProductID={currentProductID}
+            reviewsTitle={reviewsTitle}
           />
         </div>
       </div>

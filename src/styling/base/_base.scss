@@ -28,4 +28,14 @@ p {
 
 .block {
   display: block;
+
+  &--r {
+    float: right;
+  }
+}
+
+.w {
+  &--100 {
+    width: 100%;
+  }
 }
