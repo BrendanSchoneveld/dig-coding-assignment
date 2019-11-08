@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useForm from "react-hook-form";
 import moment from "moment";
 import "moment/locale/nl";

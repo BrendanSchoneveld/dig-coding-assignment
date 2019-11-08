@@ -10,14 +10,15 @@ const App = () => {
   const [productList, setProductList] = useState([]),
     [isLoading, updateIsLoading] = useState(false);
 
-  // Benodigde URL om producten op te halen
+  
+  useEffect(() => {
+    // Benodigde URL om producten op te halen
   const fetchParams = {
     URL: `http://private-5815fe-recommendationsknip.apiary-mock.com/products`
   };
 
-  useEffect(() => {
     // Haal de data asynchroon op met de benodigde URL
-    const fetchData = async ({ URL }) => {
+    const fetchData = async ({URL}) => {
       // Loading spinner activeren
       updateIsLoading(true);
       // Voor error handling, logica binnen een try catch statement gezet

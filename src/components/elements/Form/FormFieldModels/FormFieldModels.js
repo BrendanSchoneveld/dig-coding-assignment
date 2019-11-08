@@ -7,7 +7,7 @@ const formFieldModels = {
       type: "text",
       name: "firstName",
       customClasses: "form-control",
-      placeholder: "Firstname here..."
+      placeholder: "Firstname..."
     },
     labelProps: {
       target: "firstName",
@@ -23,7 +23,7 @@ const formFieldModels = {
       type: "text",
       name: "lastName",
       customClasses: "form-control",
-      placeholder: "Lastname here..."
+      placeholder: "Lastname..."
     },
     labelProps: {
       target: "lastName",

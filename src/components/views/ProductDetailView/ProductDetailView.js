@@ -29,13 +29,14 @@ const ProductDetailView = props => {
     setProduct(fetchCurrentProduct);
   });
 
+  useEffect(() => {
+
   const fetchReviewsOfCurrentProduct = (reviews, review, productID) => {
     if (productID === currentProductID) {
       reviews.push(review);
     }
   };
 
-  useEffect(() => {
     const fetchReviews = () => {
       let reviews = [];
       for (let i = 0; i < localStorage.length; i++) {
@@ -48,10 +49,6 @@ const ProductDetailView = props => {
           parsedReview,
           parsedReview.productID
         );
-
-        /* if (parsedReview.productID === currentProductID) {
-          reviews.push(parsedReview);
-        } */
       }
       setReviews(reviews);
     };

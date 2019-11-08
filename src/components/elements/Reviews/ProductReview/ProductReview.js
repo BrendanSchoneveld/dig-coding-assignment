@@ -5,14 +5,14 @@ import "./ProductReviewStyling.scss";
 import Paragraph from "../../../atoms/Typography/Misc/Paragraph";
 import Strong from "../../../atoms/Typography/Misc/Strong";
 
-const ProductReview = ({ dateOfPost, firstname, lastname, review }) => {
+const ProductReview = ({ dateOfPost, firstName, lastName, review }) => {
   return (
     <div className="review bg-purple border-r-5 p-20">
       <div className="review__head">
         <Span text={`${dateOfPost}`} customClasses="fs-14 fc-white block" />
 
         <Strong
-          text={`Geplaatst door: ${firstname} ${lastname}`}
+          text={`Geplaatst door: ${firstName} ${lastName}`}
           customClasses="fs-16 fc-white mb-20 block"
         />
       </div>
