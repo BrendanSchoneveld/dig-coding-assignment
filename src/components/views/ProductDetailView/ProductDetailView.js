@@ -24,10 +24,12 @@ const ProductDetailView = props => {
       productList &&
       productList.find(product => {
         if (product.id === currentProductID) return product;
+        return null
       });
 
     setProduct(fetchCurrentProduct);
-  });
+
+  }, [productList, currentProductID]);
 
   useEffect(() => {
 
@@ -54,7 +56,7 @@ const ProductDetailView = props => {
     };
 
     fetchReviews();
-  }, []);
+  }, [currentProductID]);
 
   const sliderSettings = {
     dots: true,
