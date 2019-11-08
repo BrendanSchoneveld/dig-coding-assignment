@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import ProductSlider from "../../elements/ProductSlider/ProductSlider";
 import ProductInfo from "../../elements/ProductInfo/ProductInfo";
 import LoadingSpinner from "../../elements/LoadingSpinner/LoadingSpinner";
 import Form from "../../elements/Form/Form";
 import ProductReviews from "../../elements/Reviews/Reviews";
-import ParagraphHeader from "../../atoms/Typography/Headers/ParagraphHeader";
 import BackLink from "../../atoms/Buttons/BackLink";
 
 const ProductDetailView = props => {
@@ -63,13 +61,6 @@ const ProductDetailView = props => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1
-  };
-
-  const buttonProps = {
-    linkClasses: "fas fa-arrow-left mr-10",
-    customClasses: "fs-16 fc-purple",
-    path: "/",
-    text: "Vorige pagina"
   };
 
   // Display product info through ProductSlider and ProductInfo

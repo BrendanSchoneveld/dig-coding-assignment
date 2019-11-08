@@ -11,13 +11,17 @@ const FirstNameField = ({
   register,
   errors
 }) => {
+  const displayErrors = errors ? (
+    <FormFieldErrors errors={errors} name={inputProps.name} />
+  ) : null;
+
   return (
     <div className={groupClasses}>
       <Label labelProps={labelProps} />
 
       <Input inputProps={inputProps} register={register} />
 
-      <FormFieldErrors errors={errors} name={inputProps.name} />
+      {displayErrors}
     </div>
   );
 };
