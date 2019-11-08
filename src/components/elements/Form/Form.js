@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import moment from "moment";
 import "moment/locale/nl";
 
 import "./FormStyling.scss";
+
+import formFieldModels from "./FormFieldModels/FormFieldModels";
 
 // Inserting a custom Hook for user input handling
 import useInput from "./CustomHooks/useInputHook";
@@ -15,54 +17,7 @@ const Form = ({ productID }) => {
     [lastname, setLastname] = useInput(""),
     [review, setReview] = useInput("");
 
-  const firstNameProps = {
-    groupClasses: "form-group col-md-6",
-    inputProps: {
-      inputTag: "input",
-      id: "firstName",
-      type: "text",
-      customClasses: "form-control",
-      placeholder: "Firstname here..."
-    },
-    labelProps: {
-      target: "firstName",
-      text: "Firstname",
-      customClasses: ""
-    }
-  };
-
-  const lastNameProps = {
-    groupClasses: "form-group col-md-6",
-    inputProps: {
-      inputTag: "input",
-      id: "review",
-      type: "text",
-      customClasses: "form-control",
-      placeholder: "Lastname here..."
-    },
-    labelProps: {
-      target: "lastName",
-      text: "Lastname",
-      customClasses: ""
-    }
-  };
-
-  const reviewProps = {
-    groupClasses: "form-group col-md-12",
-    inputProps: {
-      inputTag: "textarea",
-      id: "review",
-      type: "text",
-      numRows: 5,
-      customClasses: "form-control",
-      placeholder: "Type your review here..."
-    },
-    labelProps: {
-      target: "review",
-      text: "Review",
-      customClasses: ""
-    }
-  };
+  const { firstNameProps, lastNameProps, reviewProps } = formFieldModels;
 
   const dateOfPost = moment()
     .locale("nl")
@@ -72,16 +27,19 @@ const Form = ({ productID }) => {
     e.preventDefault();
 
     const productReview = {
-      productID,
-      dateOfPost,
-      firstname,
-      lastname,
-      review
+        productID,
+        dateOfPost,
+        firstname,
+        lastname,
+        review
+      },
+      localStorageKey = `reviewOf${firstname}${lastname}`;
+
+    const setReviewToLocalstorage = (key, data) => {
+      localStorage.setItem(key, JSON.stringify(data));
     };
 
-    const localStorageKey = `reviewOf${firstname}${lastname}`;
-
-    localStorage.setItem(localStorageKey, JSON.stringify(productReview));
+    setReviewToLocalstorage(localStorageKey, productReview);
   };
 
   return (
