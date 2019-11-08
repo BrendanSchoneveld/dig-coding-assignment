@@ -5,10 +5,10 @@ import SubTitle from "../../../atoms/Typography/Headers/Subtitle";
 import "../../../atoms/Buttons/ButtonStyling.scss";
 import Strong from "../../../atoms/Typography/Misc/Strong";
 
-const CardContentWrapper = ({ title, price, id, match }) => {
+const CardContentWrapper = ({ title, price, id, match, customClasses }) => {
   const LinkText = `View product`;
   return (
-    <div className="card__content-wrapper col-12 col-sm-9 col-md-8 offset-md-1">
+    <div className={customClasses}>
       <SubTitle customClasses="card__title mv-10 fc-purple" text={title} />
 
       <Strong

@@ -9,7 +9,7 @@ const ProductInfo = ({ product }) => {
     <Fragment>
       <PageTitle text={title} customClasses="fs-40 mb-10 fc-purple" />
 
-      <Strong text={price} currencyPrefix="€" customClasses="fs-24" />
+      <Strong text={price} currencyPrefix="€" customClasses="fs-28" />
 
       <Paragraph text={description} customClasses="mt-40" />
     </Fragment>

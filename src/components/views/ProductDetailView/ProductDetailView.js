@@ -6,6 +6,7 @@ import LoadingSpinner from "../../elements/LoadingSpinner/LoadingSpinner";
 import Form from "../../elements/Form/Form";
 import ProductReviews from "../../elements/Reviews/Reviews";
 import ParagraphHeader from "../../atoms/Typography/Headers/ParagraphHeader";
+import BackButton from "../../atoms/Buttons/BackLink";
 
 const ProductDetailView = props => {
   const [product, setProduct] = useState({}),
@@ -24,20 +25,18 @@ const ProductDetailView = props => {
       productList &&
       productList.find(product => {
         if (product.id === currentProductID) return product;
-        return null
+        return null;
       });
 
     setProduct(fetchCurrentProduct);
-
   }, [productList, currentProductID]);
 
   useEffect(() => {
-
-  const fetchReviewsOfCurrentProduct = (reviews, review, productID) => {
-    if (productID === currentProductID) {
-      reviews.push(review);
-    }
-  };
+    const fetchReviewsOfCurrentProduct = (reviews, review, productID) => {
+      if (productID === currentProductID) {
+        reviews.push(review);
+      }
+    };
 
     const fetchReviews = () => {
       let reviews = [];
@@ -66,6 +65,13 @@ const ProductDetailView = props => {
     slidesToScroll: 1
   };
 
+  const buttonProps = {
+    linkClasses: "fas fa-arrow-left mr-10",
+    customClasses: "fs-16 fc-purple",
+    path: "/",
+    text: "Vorige pagina"
+  };
+
   // Display product info through ProductSlider and ProductInfo
   const displaySelectedProduct = isLoading ? (
     <LoadingSpinner text="Product laden..." />
@@ -90,9 +96,12 @@ const ProductDetailView = props => {
     <div className="container">
       <div className="row">
         <div className="col">
-          <Link className="fs-16 fc-purple" to="/">
-            Vorige pagina
-          </Link>
+          <BackButton
+            linkClasses="fas fa-arrow-left mr-10"
+            customClasses="fs-16 fc-purple lnk lnk--no-hover"
+            path="/"
+            text="Vorige pagina"
+          />
         </div>
       </div>
 
