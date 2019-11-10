@@ -63,7 +63,8 @@ const Form = ({ productID, formTitle }) => {
           errors={errors}
           register={register({
             required: true,
-            maxLength: 20
+            maxLength: 20,
+            pattern: /^[A-Za-z]+$/i
           })}
         />
 
@@ -72,7 +73,8 @@ const Form = ({ productID, formTitle }) => {
           errors={errors}
           register={register({
             required: true,
-            maxLength: 40
+            maxLength: 40,
+            pattern: /^[A-Za-z]+$/i
           })}
         />
       </div>
